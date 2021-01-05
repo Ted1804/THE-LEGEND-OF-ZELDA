@@ -76,12 +76,12 @@ public final class Game
         this.linkAtkStates[6] = ImageUtil.get("link-attack2-E.png");
         this.linkAtkStates[7] = ImageUtil.get("link-attack2-W.png");
 
-        Scene s1 = new Scene(new Color(13300910));
-        Scene s2 = new Scene(new Color(13300910));
-        Scene s3 = new Scene(new Color(13300910));
-        Scene s4 = new Scene(new Color(13300910));
-        Scene s5 = new Scene(new Color(13300910));
-        Scene s6 = new Scene(new Color(13300910));
+        Scene s1 = new Scene(new Color(199, 254, 189));
+        Scene s2 = new Scene(new Color(199, 254, 189));
+        Scene s3 = new Scene(new Color(164, 198, 241));
+        Scene s4 = new Scene(new Color(164, 198, 241));
+        Scene s5 = new Scene(new Color(164, 198, 241));
+        Scene s6 = new Scene(new Color(164, 198, 241));
         this.sceneGrid[0][0] = s1;
         this.sceneGrid[1][0] = s2;
         this.sceneGrid[2][0] = s3;
@@ -93,6 +93,9 @@ public final class Game
         TileSet boundaryLeft = new TileSet(0, 0, 1, 14, "tileTree.png", true);
         TileSet boundaryBottom = new TileSet(0, 416, 15, 1, "tileTree.png", true);
         TileSet boundaryRight = new TileSet(448, 0, 1, 14, "tileTree.png", true);
+        TileSet boundaryTop1 = new TileSet(0, 0, 15, 1, "tileWall.png", true);
+        TileSet boundaryBottom1 = new TileSet(0, 416, 15, 1, "tileWall.png", true);
+        TileSet boundaryRight1 = new TileSet(448, 0, 1, 14, "tileWall.png", true);
 
         s1.addShape(boundaryTop);
         s1.addShape(boundaryLeft);
@@ -110,9 +113,9 @@ public final class Game
         s2.addShape(new TileSet(160, 320, 1, 1, "tileTree.png", true));
         s2.addShape(new TileSet(128, 256, 1, 1, "tileTree.png", true));
         s2.addShape(new TileSet(288, 256, 1, 1, "tileTree.png", true));
-        s2.addShape(new TileSet(384, TILE_SIZE, 1, 4, "tileTree.png", true));
-        s2.addShape(new TileSet(384, 192, 1, 6, "tileTree.png", true));
-        s2.addShape(new TileSet(352, 384, 1, 1, "tileTree.png", true));
+        s2.addShape(new TileSet(384, TILE_SIZE, 1, 4, "tileCastle.png", true));
+        s2.addShape(new TileSet(384, 192, 1, 6, "tileCastle.png", true));
+        s2.addShape(new TileSet(352, 384, 1, 1, "tileCastle.png", true));
 
         s2.addShape(new Enemy(100, 100, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s2.addShape(new Door(384, 160, this));
@@ -120,52 +123,52 @@ public final class Game
         dropGhost.setDrop(s2, 0, 0, 1);
         s2.addShape(dropGhost);
 
-        s3.addShape(boundaryTop);
-        s3.addShape(boundaryBottom);
-        s3.addShape(new TileSet(64, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s3.addShape(new TileSet(64, 256, 2, 6, "tileTree.png", true));
-        s3.addShape(new TileSet(160, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s3.addShape(new TileSet(160, 256, 2, 6, "tileTree.png", true));
-        s3.addShape(new TileSet(256, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s3.addShape(new TileSet(256, 256, 2, 6, "tileTree.png", true));
-        s3.addShape(new TileSet(352, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s3.addShape(new TileSet(352, 256, 2, 6, "tileTree.png", true));
+        s3.addShape(boundaryTop1);
+        s3.addShape(boundaryBottom1);
+        s3.addShape(new TileSet(64, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s3.addShape(new TileSet(64, 256, 2, 6, "tileWall.png", true));
+        s3.addShape(new TileSet(160, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s3.addShape(new TileSet(160, 256, 2, 6, "tileWall.png", true));
+        s3.addShape(new TileSet(256, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s3.addShape(new TileSet(256, 256, 2, 6, "tileWall.png", true));
+        s3.addShape(new TileSet(352, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s3.addShape(new TileSet(352, 256, 2, 6, "tileWall.png", true));
         s3.addShape(new MovableObstacle(2, 64, 384, 192, TILE_SIZE, TILE_SIZE, Color.RED, "H", true, this, "tileFire.png"));
         s3.addShape(new MovableObstacle(2, 64, 384, 224, TILE_SIZE, TILE_SIZE, Color.RED, "H", true, this, "tileFire.png"));
 
-        s4.addShape(boundaryTop);
-        s4.addShape(boundaryBottom);
-        s4.addShape(new TileSet(TILE_SIZE, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s4.addShape(new TileSet(TILE_SIZE, 224, 2, 6, "tileTree.png", true));
-        s4.addShape(new TileSet(128, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s4.addShape(new TileSet(128, 224, 2, 6, "tileTree.png", true));
-        s4.addShape(new TileSet(224, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s4.addShape(new TileSet(224, 224, 2, 6, "tileTree.png", true));
-        s4.addShape(new TileSet(320, TILE_SIZE, 2, 5, "tileTree.png", true));
-        s4.addShape(new TileSet(320, 224, 2, 6, "tileTree.png", true));
+        s4.addShape(boundaryTop1);
+        s4.addShape(boundaryBottom1);
+        s4.addShape(new TileSet(TILE_SIZE, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s4.addShape(new TileSet(TILE_SIZE, 224, 2, 6, "tileWall.png", true));
+        s4.addShape(new TileSet(128, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s4.addShape(new TileSet(128, 224, 2, 6, "tileWall.png", true));
+        s4.addShape(new TileSet(224, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s4.addShape(new TileSet(224, 224, 2, 6, "tileWall.png", true));
+        s4.addShape(new TileSet(320, TILE_SIZE, 2, 5, "tileWall.png", true));
+        s4.addShape(new TileSet(320, 224, 2, 6, "tileWall.png", true));
         s4.addShape(new MovableObstacle(2, 128, 256, 96, TILE_SIZE, TILE_SIZE, Color.RED, "V", true, this, "tileFire.png"));
         s4.addShape(new MovableObstacle(2, 128, 256, 192, TILE_SIZE, TILE_SIZE, Color.RED, "V", false, this, "tileFire.png"));
         s4.addShape(new MovableObstacle(2, 128, 256, 288, TILE_SIZE, TILE_SIZE, Color.RED, "V", true, this, "tileFire.png"));
 
-        s5.addShape(boundaryTop);
-        s5.addShape(boundaryBottom);
-        s5.addShape(new TileSet(64, 96, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(256, 256, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(256, 96, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(160, 192, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(96, 320, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(288, 256, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(128, 256, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(384, 96, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(352, 192, 1, 1, "tileTree.png", true));
-        s5.addShape(new TileSet(320, 288, 1, 1, "tileTree.png", true));
+        s5.addShape(boundaryTop1);
+        s5.addShape(boundaryBottom1);
+        s5.addShape(new TileSet(64, 96, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(256, 256, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(256, 96, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(160, 192, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(96, 320, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(288, 256, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(128, 256, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(384, 96, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(352, 192, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(320, 288, 1, 1, "tileFire.png", true));
         s5.addShape(new Enemy(350, 250, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s5.addShape(new Enemy(175, 100, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s5.addShape(new Enemy(115, 300, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
 
-        s6.addShape(boundaryTop);
-        s6.addShape(boundaryRight);
-        s6.addShape(boundaryBottom);
+        s6.addShape(boundaryTop1);
+        s6.addShape(boundaryRight1);
+        s6.addShape(boundaryBottom1);
         s6.addShape(new Enemy(350, 250, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s6.addShape(new Enemy(250, 150, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s6.addShape(new Enemy(150, 250, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
@@ -173,8 +176,11 @@ public final class Game
         s6.addShape(new Enemy(100, 250, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         
         Shape b = new Shape(TILE_SIZE, 390, 300, 20, true, Color.GREEN, true, this);
+        Shape c = new Shape(TILE_SIZE, 390, 125, 20, true, Color.BLUE, true, this);
         b.setText("ARROWS to Move and Attack with SPACEBAR", Color.BLACK);
+        c.setText("END OF THE DEMO", Color.BLACK);
         s1.addShape(b);
+        s6.addShape(c);
 
     }
 
