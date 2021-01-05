@@ -162,6 +162,15 @@ public final class Game
         s5.addShape(new TileSet(384, 96, 1, 1, "tileFire.png", true));
         s5.addShape(new TileSet(352, 192, 1, 1, "tileFire.png", true));
         s5.addShape(new TileSet(320, 288, 1, 1, "tileFire.png", true));
+        s5.addShape(new TileSet(384, TILE_SIZE, 1, 4, "tileWall.png", true));
+        s5.addShape(new TileSet(384, 192, 1, 6, "tileWall.png", true));
+        s5.addShape(new TileSet(352, 384, 1, 1, "tileWall.png", true));
+
+        s5.addShape(new Enemy(100, 100, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
+        s5.addShape(new Door(384, 160, this));
+        Enemy dropGhost1 = new Enemy(300, 200, TILE_SIZE, TILE_SIZE, 3, "ghost", this);
+        dropGhost1.setDrop(s5, 0, 0, 1);
+        s5.addShape(dropGhost1);
         s5.addShape(new Enemy(350, 250, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s5.addShape(new Enemy(175, 100, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
         s5.addShape(new Enemy(115, 300, TILE_SIZE, TILE_SIZE, 3, "ghost", this));
